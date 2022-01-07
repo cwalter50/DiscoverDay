@@ -67,7 +67,8 @@ welcomeMessage = Text(app, text="What kind of Scientist are you?", size=40, font
 def getRandomScientist():
     
     #welcomeMessage.value = "Hello " + myName.value
-    theSci = sciList[0]
+    theSci = random.choice(sciList)
+    #theSci = sciList[0]
     responseMessage.value = theSci.name
     descriptionMessage.value = theSci.description
     groot.value = Picture(app, image = "chemist.gif", width=250, height = 250)   

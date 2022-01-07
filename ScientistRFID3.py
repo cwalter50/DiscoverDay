@@ -10,7 +10,7 @@ from mfrc522 import SimpleMFRC522
 # for reading RFID reader
 reader = SimpleMFRC522()
 
-from guizero import App, Text, TextBox, Picture
+from guizero import App, Text, TextBox, PushButton, Picture
 
 # Custom Class of Scientist. Will be used to connect name, description, and image
 class Scientist:
@@ -75,6 +75,7 @@ def checkRFidTag():
 # Create the App 
 app = App(title="ScientistPicker",width= 1820, height = 1100, bg = "lightBlue")
 
+
 #add widgets here
 
 
@@ -93,13 +94,20 @@ def getRandomScientist():
     descriptionMessage.value = theSci.description
     groot.image = theSci.image
 
-     
+  
+#updateText = PushButton(app, command=getRandomScientist, text="Display Scientist")
+
+
+
+
+
 
 spacer = Text(app, text = " ", size = 55, font = "Arial", color = "black")
 responseMessage = Text(app, text="", size=75, font="Arial", color="black")
 descriptionMessage = Text(app, text = "", size = 40, font="Arial", color ="white")
 
-# this will claa the RFID reader function defined above every 1 second
+
+# this will call the RFID reader function defined above every 1 second
 responseMessage.repeat(500, checkRFidTag)
 #pictures must be in .gif format, but animated gifs will only appear as stills.
 #to make sure you can scale images, you have to add the following line in terminal 
